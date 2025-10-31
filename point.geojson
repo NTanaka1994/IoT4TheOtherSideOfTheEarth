@@ -1,0 +1,9 @@
+{ "type": "Point",
+  "crs": { "type": "name",
+    "properties": {
+      "name": "Current Location"
+       }
+      },
+  "coordinates": [139.522493, 35.709756]
+ }
+    
