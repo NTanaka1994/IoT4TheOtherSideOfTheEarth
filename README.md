@@ -1,7 +1,6 @@
 # IoT4TheOtherSideOfTheEarth
 簡単に言えば理論上地球の裏側からでも操作できるドローンです(WEBserver.pyとUDP_server.pyをクラウドに上げれば)。ただ、予算の都合上タンク型ドローンにリモコンに左右前進スイッチを作りモータをパワートランジスタで動かしてドローンに着けた温湿度センサとCO2センサのそれぞれの値のダッシュボードとGPSでドローンの位置を地図上に表示するのを「templates」の「dashbord.html(あくまで動作確認用)」にやっています。<br>
-<img width="2000" height="883" alt="image" src="https://github.com/user-attachments/assets/81d370a9-6fe2-4749-9968-12396e96e352" />
-
+<img width="2000" height="883" alt="image" src="https://github.com/user-attachments/assets/20a6e170-a8b1-4a67-8909-7be8309055ee" />
 
 ちなみに全部RESTfulWebAPI(JSON)で動かしています。<br>
 開発進捗<br>
