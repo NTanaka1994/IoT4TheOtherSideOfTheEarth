@@ -4,9 +4,6 @@
 <div style="width: 20%;">
   <canvas id="tmp"></canvas>
 </div>
-<div style="width: 20%;">
-  <canvas id="co2"></canvas>
-</div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
@@ -78,30 +75,6 @@
                     }
                 }
             });
-    var ctx_co2 = document.getElementById("co2").getContext('2d');
-            var myChart_co2 = new Chart(ctx_co2, {
-                type: 'line',
-                data: {
-                    labels: x,
-                    datasets: [{
-                        label: 'CO2',
-                        data: co2,
-                        borderColor: [
-                            'rgba(0, 255, 0, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }
-                }
-            });
     setInterval(async function(){
         addr = "get-state"
         res = "";
@@ -116,7 +89,6 @@
         var jsn = JSON.parse(res);
         var hum = jsn.hum;
         var tmp = jsn.tmp;
-        var co2 = jsn.co2;
         var x = jsn.x;
         myChart_hum.data.labels = x;
         myChart_hum.data.datasets[0].data = hum;
@@ -124,9 +96,6 @@
         myChart_tmp.data.labels = x;
         myChart_tmp.data.datasets[0].data = tmp;
         myChart_tmp.update('none');
-        myChart_co2.data.labels = x;
-        myChart_co2.data.datasets[0].data = co2;
-        myChart_co2.update('none');
     }, 500);
     function init(){
         addr = "get-geo"
@@ -173,4 +142,5 @@
 </script>
 <body onload="init()">
     <div id="mapcontainer"  style="width:600px;height:600px"></div>
+
 </body>
