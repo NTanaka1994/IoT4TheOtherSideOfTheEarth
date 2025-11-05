@@ -51,7 +51,6 @@ try:
         #print("ido:%f, kei=%f"%(ido, kei))
         dic["hum"] = result.humidity
         dic["tmp"] = result.temperature
-        dic["co2"] = 700
         dic["ido"] = ido
         dic["kei"] = kei
         #print(dic)
