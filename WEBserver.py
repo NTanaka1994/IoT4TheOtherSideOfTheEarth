@@ -12,7 +12,6 @@ def reset():
     data = {}
     data["tmp"] = []
     data["hum"] = []
-    data["co2"] = []
     data["x"] = []
     f = open("state.json", "w", encoding="utf-8")
     f.write(json.dumps(data))
@@ -31,7 +30,6 @@ def route():
 def input_sensor():
     hum = float(request.form["hum"])
     tmp = float(request.form["tmp"])
-    co2 = float(request.form["co2"])
     ido = float(request.form["ido"])
     kei = float(request.form["kei"])
     f = open("state.json", "r", encoding="utf-8")
@@ -49,7 +47,6 @@ def input_sensor():
     dic2 = {}
     dic2["hum"] = hums
     dic2["tmp"] = tmps
-    dic2["co2"] = co2s
     dic2["x"] = x
     f = open("state.json", "w", encoding="utf-8")
     f.write(json.dumps(dic2))
@@ -86,4 +83,5 @@ def get_geo():
 
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=80)
