@@ -1,8 +1,8 @@
 import socket
 import RPi.GPIO as GPIO
 
-RIGHT = 5
-LEFT = 3
+RIGHT = 3
+LEFT = 2
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEFT, GPIO.IN)
@@ -20,4 +20,5 @@ while True:
         msg = msg + "1"
     else:
         msg = msg + "0"
+
     sock.sendto(msg.encode("utf-8"), ("10.153.229.254", 9999))
